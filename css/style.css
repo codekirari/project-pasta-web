@@ -4,26 +4,29 @@ body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  font-family: 'Lora', serif;
 
-  body {
-    font-family: 'Montserrat', sans-serif;
-  }
 }
 
 /* HEADER */
 
 header {
-  background-color: red;
-  /*  sorry for the LONG urls, I had to upload them to google drive  */
-
-  background-image: url("../images/headerpasta1.jpg");
-  background-size: 100%;
-  background-position: center;
+  background-image: url("../images/headerpasta0.jpg");
+  background-size: cover; 
+  background-position: center bottom; /* parte inferior central de la imagen */
+  background-attachment: fixed; /* background mantiene fija */
   height: 300px;
+  width: 100%;
   padding: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
 }
+
+
+
 
 header a {
   color: white;
@@ -32,16 +35,17 @@ header a {
   margin-top: 40px;
 }
 
+
 header .logo a {
-  background-image: url("../images/pastalogoheader.png");;
-  background-size: 200px;
+  background-image: url("../images/logopasta.png");;
+  background-size: 250px;
   background-repeat: no-repeat;
   display: inline-block;
   height: 200px;
   position: relative;
   text-indent: -9999999px;
   top: -25px;
-  width: 300px;
+  width: 250px;
 }
 
 nav ul {
@@ -56,7 +60,63 @@ nav li {
 }
 
 
-/* RESPONSIVE RULES */
+
+/* Welcome Section */
+.welcome {
+  padding: 20px;
+  background-color: #f8f8f8; 
+  text-align: center;
+}
+
+.welcome h1 {
+  color: #333;
+}
+
+.intro {
+  margin: 20px auto;
+}
+
+.intro h2 {
+  color: #555;
+}
+
+.intro p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #ff6666;
+}
+
+/* Pasta for Home Section */
+
+.pasta-for-home {
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.pasta-for-home h2 {
+  color: #333;
+}
+
+.pasta-for-home p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
 
 
 
@@ -69,34 +129,45 @@ nav li {
   padding: 20px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; /* Permite que las figuras se ajusten en pantallas más pequeñas */
-  justify-content: center; /* Centra las figuras dentro del contenedor */
+  flex-wrap: wrap; /* para ajustar esto a todas las pantallas */
+  justify-content: center; /* Centra las figuras */
 }
 
 .features figure {
   margin: 20px;
   text-align: center;
   text-transform: uppercase;
-  width: 200px; /* Asegura un tamaño uniforme para las figuras */
+  width: 200px; /* asegura que todas tengan el mismo tamaño */
 }
 
 .features figure img {
-  width: 200px;
-  height: 200px; /* Asegura que las imágenes sean cuadradas */
+  width: 100%; /* ancho al contenedor del figure */
+  height: 100%; /* altura al contenedor del figure */
+  border-radius: 50%; /* imágenes circulares */
   border: 1px solid white;
-  border-radius: 50%; /* Hace las imágenes circulares */
   box-shadow: gray 0 0 10px;
-  object-fit: cover; /* Ajusta las imágenes dentro del contenedor sin distorsionar */
+  object-fit: cover; /* imágenes dentro del contenedor sin distorsionar */
 }
+
+.features a img {
+  display: block; /* Asegura que la imagen ocupe todo el espacio del contenedor */
+  border-radius: 50%; /* Asegura que las imágenes sean circulares */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para las imágenes */
+}
+
+.features a:hover img {
+  opacity: 0.8; /* efecto visual al pasar sobre la imagen */
+}
+
 
 
 /* CONTACT FORM STYLES */
 .contact-form {
-  background-color: #333; /* Fondo oscuro para que coincida con el tema */
+  background-color: #333; 
   padding: 20px;
   border-radius: 10px;
   max-width: 500px;
-  margin: 0 auto; /* Centra el formulario */
+  margin: 0 auto; /* centrar el formulario */
 }
 
 .contact-form h2 {
@@ -164,12 +235,12 @@ main {
 .intro-text {
   padding: 0 20px;
 }
-
+/* boton sus caraacteristicas */
 .btn {
   display: inline-block;
   padding: 10px 20px;
   margin-top: 20px;
-  background-color: #ff6f61; /* Color de fondo del botón */
+  background-color: #ff6f61;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -206,6 +277,64 @@ main {
 .team-info p {
   margin: 5px 0;
 }
+
+
+/* Fresh Pasta Page Styles */
+.fresh-pasta {
+  padding: 20px;
+  background: white;
+  color: gray;
+  text-align: center;
+}
+
+.fresh-pasta h1 {
+  color: #333;
+}
+
+.fresh-pasta p {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.pasta-types {
+  margin: 20px 0;
+}
+
+.pasta-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pasta-item {
+  width: 200px;
+  text-align: center;
+}
+
+.pasta-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.order {
+  margin-top: 20px;
+}
+
+.order .btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.order .btn:hover {
+  background-color: #ff6666;
+}
+
 
 
 

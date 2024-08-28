@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li class="logo"><a href="index.html">Logo pasta</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="classes.html">Classes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="class-intro">
+            <h1>Learn to Make Pasta</h1>
+            <p>Join our cooking classes and discover the secrets of making delicious homemade pasta. Our expert chefs will guide you through every step of the process.</p>
+        </section>
+
+        <section class="class-details">
+            <h2>Class Schedule</h2>
+            <div class="class-list">
+                <article class="class-item">
+                    <h3>Fresh Pasta 101</h3>
+                    <p>Date: September 15, 2024</p>
+                    <p>Time: 10:00 AM - 1:00 PM</p>
+                    <p>Learn the basics of making fresh pasta from scratch. No prior experience necessary.</p>
+                    <a href="#signup-form" class="btn">Sign Up</a>
+                </article>
+                <article class="class-item">
+                    <h3>Classic Italian Sauces</h3>
+                    <p>Date: September 22, 2024</p>
+                    <p>Time: 2:00 PM - 5:00 PM</p>
+                    <p>Discover how to make traditional Italian sauces to pair with your homemade pasta.</p>
+                    <a href="#signup-form" class="btn">Sign Up</a>
+                </article>
+                <article class="class-item">
+                    <h3>Advanced Pasta Techniques</h3>
+                    <p>Date: October 5, 2024</p>
+                    <p>Time: 10:00 AM - 1:00 PM</p>
+                    <p>Take your pasta-making skills to the next level with advanced techniques and recipes.</p>
+                    <a href="#signup-form" class="btn">Sign Up</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="signup-form" class="signup-form">
+            <h2>Sign Up for a Class</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="class">Select a Class:</label>
+                <select id="class" name="class">
+                    <option value="fresh-pasta-101">Fresh Pasta 101</option>
+                    <option value="classic-italian-sauces">Classic Italian Sauces</option>
+                    <option value="advanced-pasta-techniques">Advanced Pasta Techniques</option>
+                </select>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pasta</p>
+    </footer>
+</body>
+</html>
