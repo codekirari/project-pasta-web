@@ -159,6 +159,36 @@ nav li {
   opacity: 0.8; /* efecto visual al pasar sobre la imagen */
 }
 
+/*---- Menu Items ----*/
+.menu-items article {
+  background: #222;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  margin: 1rem;
+  padding: 1rem;
+  width: calc(33% - 2rem);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-items img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-items h2 {
+  font-size: 1.75rem;
+  margin: 1rem 0;
+  color: #5b4747; 
+}
+
+.menu-items p {
+  color: #bbb;
+}
+
+
 
 
 /* CONTACT FORM STYLES */
@@ -335,6 +365,53 @@ main {
   background-color: #ff6666;
 }
 
+
+/* Menu Items */
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.menu-items article {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  padding: 1rem;
+  width: calc(33% - 2rem);
+  text-align: center;
+}
+
+.menu-items img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.menu-items h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.menu-items p {
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: black;
+  color: gray;
+  font-size: 12px;
+  padding: 20px 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-items article {
+    width: calc(50% - 2rem);
 
 
 
