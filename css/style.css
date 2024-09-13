@@ -1,30 +1,47 @@
 body {
   background: rgb(58, 58, 58);
   color: white;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'Lora', serif;
   margin: 0;
   padding: 0;
-  font-family: 'Lora', serif;
-
 }
 
 /* HEADER */
-
 header {
-  background-image: url("../images/headerpasta0.jpg");
-  background-size: cover; 
-  background-position: center bottom; /* parte inferior central de la imagen */
-  background-attachment: fixed; /* background mantiene fija */
-  height: 300px;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
   position: relative;
+  z-index: 2
 }
 
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* colocarle una capa oscura semi-transparente */
+  z-index: 1;
+}
+
+header a {
+  position: relative;
+  z-index: 2; /* y el texto ahi encima */
+}
+
+header {
+  position: relative;
+  background-image: url("../images/headerpasta0.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  height: 300px;
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;     /* Centrar verticalmente */
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
 
 
@@ -33,6 +50,11 @@ header a {
   text-decoration: none;
   text-transform: uppercase;
   margin-top: 40px;
+  font-size: 24px; 
+  font-weight: bold; /* texto sea más grueso */
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+  
 }
 
 
@@ -64,12 +86,13 @@ nav li {
 /* Welcome Section */
 .welcome {
   padding: 20px;
-  background-color: #f8f8f8; 
+  background-color: #fdfdfd;
   text-align: center;
 }
 
 .welcome h1 {
   color: #333;
+  margin-bottom: 20px;
 }
 
 .intro {
@@ -83,9 +106,10 @@ nav li {
 .intro p {
   font-size: 16px;
   line-height: 1.5;
+  color: #555;
 }
 
-.btn {
+.intro .btn {
   display: inline-block;
   background-color: #ff4d4d;
   color: white;
@@ -130,14 +154,14 @@ nav li {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; /* para ajustar esto a todas las pantallas */
-  justify-content: center; /* Centra las figuras */
+  justify-content: center; /* centrarlas */
 }
 
 .features figure {
   margin: 20px;
   text-align: center;
   text-transform: uppercase;
-  width: 200px; /* asegura que todas tengan el mismo tamaño */
+  width: 200px; /*  mismo tamaño */
 }
 
 .features figure img {
@@ -189,23 +213,67 @@ nav li {
 }
 
 
+/* Contact Layout */
+.contact-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #444;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
+.contact-column {
+  flex: 1;
+  min-width: 280px;
+  background: #555;
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
 
-/* CONTACT FORM STYLES */
+.contact-column h2 {
+  color: #ff4d4d;
+  margin-bottom: 10px;
+}
+
+.contact-column p {
+  color: white;
+  margin: 0;
+}
+
+.contact-column a {
+  color: #ff4d4d;
+  text-decoration: none;
+}
+
+.contact-column a:hover {
+  text-decoration: underline;
+}
+
+.map iframe {
+  border-radius: 8px;
+}
+
 .contact-form {
-  background-color: #333; 
+  background-color: #333;
   padding: 20px;
   border-radius: 10px;
   max-width: 500px;
-  margin: 0 auto; /* centrar el formulario */
+  margin: 20px auto;
 }
 
 .contact-form h2 {
   color: white;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .contact-form label {
-  display: block; /* Hace que el label ocupe una línea completa */
+  display: block;
   margin-bottom: 10px;
   color: white;
 }
@@ -213,7 +281,7 @@ nav li {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-  width: 100%; /* Ocupa el 100% del ancho disponible */
+  width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -228,44 +296,79 @@ nav li {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  display: block;
+  width: 100%;
+  font-size: 16px;
 }
 
 .contact-form button:hover {
   background-color: #ff6666;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-layout {
+    flex-direction: column;
+  }
+
+  .map iframe {
+    height: 200px; /* Ajusta la altura del mapa en pantallas más pequeñas */
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+  }
+}
+
+
 
 /* ABOUT PAGE SPECIFIC STYLES */
+
 main {
   padding: 20px;
+  background-color: #f5f5f5;
 }
 
-.about-intro {
+.about-layout {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.intro-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 900px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+.about-column {
+  background: #444;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.about-intro,
+.about-team {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
 }
 
 .about-image {
   width: 100%;
   max-width: 600px;
   height: auto;
+  border-radius: 8px;
   margin-bottom: 20px;
 }
 
-.intro-text {
-  padding: 0 20px;
+.intro-text h2 {
+  color: #c9c3c3;
 }
-/* boton sus caraacteristicas */
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -278,35 +381,68 @@ main {
 }
 
 .btn:hover {
-  background-color: #ff3b30; /* Color de fondo del botón al pasar el ratón */
+  background-color: #ff3b30;
 }
 
 .about-team {
-  margin-top: 40px;
+  text-align: center;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .team-member {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
+  background-color: #555;
+  border-radius: 10px;
+  padding: 20px;
+  width: calc(33% - 20px);
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .team-photo {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-  margin-right: 20px;
+  margin-bottom: 15px;
 }
 
 .team-info h3 {
-  margin: 0;
-  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #e1dddd;
 }
 
 .team-info p {
-  margin: 5px 0;
+  color: #e8e7e7;
+  margin-bottom: 10px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-member {
+    width: calc(50% - 20px); /* Ajusta el tamaño en pantallas más pequeñas */
+  }
+
+  .about-column {
+    flex: 1;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-member {
+    width: 100%; /* Una sola columna en pantallas muy pequeñas */
+  }
+}
+
 
 
 /* Fresh Pasta Page Styles */
